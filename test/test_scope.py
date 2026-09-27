@@ -4,19 +4,6 @@
 #class - один раз на класс тестов
 #module - один раз на файл
 #session - один раз на весь запуск pytest
-import pytest
-
-
-@pytest.fixture(scope="module")
-def user():
-    print("Создаем пользователя")
-    yield {
-        "name": "Vika",
-        "age": 21,
-        "city": "Ryazan",
-        "work": True
-    }
-    print("Удаляем пользователя")
 
 def test_name_user(user):
     assert user["name"] == "Vika"
