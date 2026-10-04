@@ -18,3 +18,11 @@ def test_number(number):
 def test_user(name, age):
     assert isinstance(name, str)
     assert age >= 18
+
+#################################################
+
+@pytest.mark.parametrize("status_code", [200, 201, 204])
+def test_status_code(status_code):
+    assert status_code <= 299 and status_code >= 200
+
+#################################################
