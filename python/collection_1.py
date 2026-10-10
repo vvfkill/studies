@@ -320,6 +320,7 @@ def first_unique_word(text):
     return None
 print(first_unique_word("cat dog bird cat cat fish dog"))
 
+#14
 def firs_unique_char(symbols):
     say = {}
 
@@ -336,3 +337,61 @@ def firs_unique_char(symbols):
     return None
 
 print (firs_unique_char("swiss"))
+
+#15
+def is_anagramm(firs, second):
+    glossary_1 = {}
+    glossary_2 = {}
+
+    for symbol in firs:
+        if symbol in glossary_1:
+            glossary_1[symbol] += 1
+        else:
+            glossary_1[symbol] = 1
+
+    for symbol in second:
+            if symbol in glossary_2:
+                glossary_2[symbol] += 1
+            else:
+                glossary_2[symbol] = 1
+
+    if glossary_1 == glossary_2: #return glossary_1 == glossary_2
+        return True
+    else:
+        return False
+
+print(is_anagramm("listen", "silent"))
+
+#16
+def is_anagramm_1(first, second):
+    dictionary_1 = {}
+    dictionary_2 = {}
+
+    first = first.lower().replace(" ", "")
+    second = second.lower().replace(" ", "")
+
+    for symbol in first:
+        if symbol in dictionary_1:
+            dictionary_1[symbol] += 1
+        else:
+            dictionary_1[symbol] = 1
+
+    for symbol in second:
+        if symbol in dictionary_2:
+            dictionary_2[symbol] += 1
+        else:
+            dictionary_2[symbol] = 1
+
+    return dictionary_1 == dictionary_2
+    
+print(is_anagramm_1("School Master", "The Classroom")) 
+
+#17
+def count_vowels(text):
+    count = 0 
+    for symbol in text:
+        if symbol in 'aeiou':
+            count += 1
+    return count
+print(count_vowels("hello"))
+
